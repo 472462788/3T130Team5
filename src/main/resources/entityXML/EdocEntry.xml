@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.accp.entity">
+    <class name="EdocEntry" table="edoc_entry">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <many-to-one name="categoryId" column="categoryId" class="EdocCategory"/>
+        <property name="title" column="title"/>
+        <property name="summary" column="summary"/>
+        <property name="uploadUser" column="uploadUser"/>
+        <property name="createDate" column="createDate"/>
+    </class>
+</hibernate-mapping>

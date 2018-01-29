@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.accp.entity">
+    <class name="EdocCategory" table="edoc_category">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="name" column="name"/>
+        <set name="edocCategories" cascade="delete">
+            <key column="categoryId"/>
+            <one-to-many class="EdocEntry"/>
+        </set>
+    </class>
+</hibernate-mapping>
